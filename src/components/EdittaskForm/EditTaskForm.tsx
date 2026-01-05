@@ -12,7 +12,7 @@ const EditTaskForm: React.FC<EditTaskFormProps> = ({ task }) => {
   const [description, setDescription] = useState(task.description);
   const [dueDate, setDueDate] = useState(task.dueDate);
   const [isCompleted, setIsCompleted] = useState(task.isCompleted);
-  const updateTaskWithId = updateTask.bind(null, task._id);
+  const updateTaskWithId = updateTask.bind(null, task._id.toString());
   const initialState: FormState = { error: '' };
   const [state, formAction] = useFormState(updateTaskWithId, initialState);
 
